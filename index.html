@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Yaniv Scorecard</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js' defer></script>
+</head>
+<body>
+    <h1>Yaniv</h1>
+    <section>
+
+        <!-- <table>
+            <thead>
+                <tr>
+                    <th>Game To</th>
+                    <th><input type="number" id="gameto"></th>
+                    <th>Num Players</th>
+                    <th><input type="number" id="gameto"></th>
+                </tr>
+            </thead>
+        </table> -->
+
+        <div class="tbl-header">
+            <table id="scorecard-top" cellpadding="0" cellspacing="0" border="0">
+            <thead>
+              <tr class="score-names">
+                <th>Player</th>
+                <th class="player1">Mark</th>
+                <th class="player2">Kristine</th>
+                <th class="player3">Brian</th>
+                <th class="player4">Chris</th>
+              </tr>
+              <tr class="score-total">
+                <th>Score</th>
+                <th class="player1">0</th>
+                <th class="player2">0</th>
+                <th class="player3">0</th>
+                <th class="player4">0</th>
+              </tr>
+              <tr class="small-header score-behind">
+                <th>Points Behind</th>
+                <th class="player1">0</th>
+                <th class="player2">0</th>
+                <th class="player3">0</th>
+                <th class="player4">0</th>
+              </tr>
+              <tr class="small-header score-asafs">
+                <th>Asafs</th>
+                <th class="player1">0</th>
+                <th class="player2">0</th>
+                <th class="player3">0</th>
+                <th class="player4">0</th>
+              </tr>
+              <tr class="small-header score-yanivs">
+                <th>Yanivs</th>
+                <th class="player1">0</th>
+                <th class="player2">0</th>
+                <th class="player3">0</th>
+                <th class="player4">0</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+        <div class="tbl-content">
+          <table id="scorecard-scores" cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td>
+                    <button onclick="addRow()">Add Scores</button>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+    </section>
+    </body>
+</html>
