@@ -15,9 +15,9 @@ function update(e) {
 
 function addRow() {
     console.log("CLICK add scores");
-    var scoresRef = document.getElementById("scorecard-scores").getElementsByTagName("tbody")[0];
-    var N = scoresRef.getElementsByTagName("tr").length + 1;
-    var newRow = scoresRef.insertRow();
+    var scoresRef = document.getElementsByTagName("tbody")[0];
+    var N = scoresRef.getElementsByTagName("tr").length;
+    var newRow = scoresRef.insertRow(N-1);
     newRow.insertCell().textContent = "Round " + N;
     for (let index = 1; index <= numPlayers; index++) {
         var c = newRow.insertCell();
@@ -28,7 +28,7 @@ function addRow() {
 };
 
 function scorecardScores() {
-    return document.getElementById("scorecard-scores").getElementsByTagName("tbody")[0]
+    return document.getElementsByTagName("tbody")[0]
 }
 
 function getRow(i) {
@@ -67,7 +67,7 @@ function sumScores() {
 }
 
 function scorecardTopSection(name) {
-    return document.getElementById("scorecard-top").getElementsByClassName("score-"+name)[0]
+    return document.getElementsByTagName("thead")[0].getElementsByClassName("score-"+name)[0]
 }
 
 function updateTotals() {
@@ -110,12 +110,12 @@ function distanceToOut(val) {
 }
 
 function pickColor(weight) {
-    var w = weight * 2 - 1;
+    var w = Math.pow(weight * 2 - 1, 3);
     var w1 = Math.min(1, w + 1);
     var w2 = Math.min(1, -1 * w + 1);
     var rgb = [
-        Math.round(200 * w1),
-        Math.round(200 * w2),
+        Math.round(250 * w1),
+        Math.round(250 * w2),
         0
     ];
     return rgb;

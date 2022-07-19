@@ -23,8 +23,8 @@
             </thead>
         </table> -->
 
-        <div class="tbl-header">
-            <table id="scorecard-top" cellpadding="0" cellspacing="0" border="0">
+        <div class="freeze-tbl">
+            <table>
             <thead>
               <tr class="score-names">
                 <th>Player</th>
@@ -62,20 +62,16 @@
                 <th class="player4">0</th>
               </tr>
             </thead>
-          </table>
-        </div>
-        <div class="tbl-content">
-          <table id="scorecard-scores" cellpadding="0" cellspacing="0" border="0">
             <tbody>
+                <tr>
+                    <td>
+                      <button onclick="addRow()">Add Scores</button>
+                    </td>
+                  </tr>  
             </tbody>
             <tfoot>
-              <tr>
-                <td>
-                    <button onclick="addRow()">Add Scores</button>
-                </td>
-              </tr>
-            </tfoot>
-          </table>
+            </tfoot>  
+            </table>
         </div>
     </section>
     </body>
