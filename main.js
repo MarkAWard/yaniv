@@ -24,26 +24,31 @@ function createPlayerHeader() {
     var syanivs = document.getElementsByClassName('score-yanivs')[0];
     var cell = null;
     for (let player = 1; player <= numPlayers; player++) {
-        cell = snames.insertCell();
+        cell = document.createElement("th");
         cell.setAttribute("class", "player" + player);
         cell.setAttribute("contenteditable", "true");
         cell.textContent = "Player " + player;
+        snames.appendChild(cell);
         
-        cell = stotal.insertCell();
+        cell = document.createElement("th");
         cell.setAttribute("class", "player" + player);
         cell.textContent = 0;
+        stotal.appendChild(cell);
         
-        cell = sbehind.insertCell();
+        cell = document.createElement("th");
         cell.setAttribute("class", "player" + player);
         cell.textContent = 0;
+        sbehind.appendChild(cell);
 
-        cell = sasafs.insertCell();
+        cell = document.createElement("th");
         cell.setAttribute("class", "player" + player);
         cell.textContent = 0;
+        sasafs.appendChild(cell);
 
-        cell = syanivs.insertCell();
+        cell = document.createElement("th");
         cell.setAttribute("class", "player" + player);
         cell.textContent = 0;
+        syanivs.appendChild(cell);
     }
 }
 
