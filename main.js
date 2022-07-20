@@ -78,6 +78,15 @@ function addRow() {
         }
     }
     document.getElementById("add-row").scrollIntoView();
+    for (let index = 1; index < newRow.childNodes.length; index++) {
+        var scoreBox = newRow.childNodes[index];
+        if (scoreBox.getAttribute('contenteditable') == 'true') {
+            console.log("focus on " + index);
+            console.log(scoreBox);
+            scoreBox.focus();
+            break;
+        }
+    }
 };
 
 function scorecardScores() {
