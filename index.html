@@ -17,13 +17,13 @@
     <section id="game-setup">
         <div>
             <div class="field">
-                <label for="game-to">Game to:</label>
-                <input type="number" id="game-to" name="game-to" placeholder="200" />
+                <label for="game-to">Game to: </label>
+                <input type="number" id="game-to" name="game-to" placeholder="200" onfocus="this.value=''" />
                 <small></small>
             </div>
             <div class="field">
-                <label for="num-players">Number of players:</label>
-                <input type="numer" id="num-players" name="num-players" placeholder="4" />
+                <label for="num-players">Number of players: </label>
+                <input type="numer" id="num-players" name="num-players" placeholder="4" onfocus="this.value=''"/>
                 <small></small>
             </div>
             <button type="submit" onclick="setupGame()">Start Game</button>

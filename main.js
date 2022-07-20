@@ -201,6 +201,7 @@ function resetGlobals() {
     scores = {};
     asafs = {};
     yanivs = {};
+    document.getElementById("game-score").textContent = '';
 }
 
 function clearScoreboard() {
