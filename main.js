@@ -188,6 +188,35 @@ function scoreColor(val) {
     return 'rgb(' + result.join() + ')';
 }
 
+function clearGame() {
+    document.getElementById("scorecard").style.display = 'none';
+    document.getElementById("game-setup").style.display = null;
+    resetGlobals();
+    clearScoreboard();
+}
+
+function resetGlobals() {
+    gameScore = null;
+    numPlayers = null;
+    scores = {};
+    asafs = {};
+    yanivs = {};
+}
+
+function clearScoreboard() {
+    var rounds = document.getElementsByTagName("tbody")[0].getElementsByTagName("tr");
+    while (rounds.length > 1) {
+        rounds[0].remove();
+    }
+    var playerHeaders = document.getElementsByTagName("thead")[0].getElementsByTagName("tr");
+    for (const row of playerHeaders) {
+        var players = row.getElementsByTagName("th");
+        while (players.length > 1) {
+            players[1].remove();
+        }
+    }
+}
+
 // $('td[contenteditable=true]').on('focus', function() {
 //     console.log("focus");
 //     const $this = $(this);
