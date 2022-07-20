@@ -1,9 +1,51 @@
-let gameScore = 200;
-let numPlayers = 4;
+let gameScore = null;
+let numPlayers = null;
 let scores = {};
 let asafs = {};
 let yanivs = {};
 let OUT = "OUT";
+
+function setupGame(e) {
+    var scoreInput = document.getElementById('game-to');
+    var numPlayersInput = document.getElementById('num-players');
+    gameScore = parseInt(scoreInput.value || scoreInput.placeholder);
+    numPlayers = parseInt(numPlayersInput.value || numPlayersInput.placeholder);
+    document.getElementById("game-score").textContent = 'Game to ' + gameScore;
+    createPlayerHeader();
+    document.getElementById("scorecard").style.display = null;
+    document.getElementById("game-setup").style.display = 'none';
+}
+
+function createPlayerHeader() {
+    var snames = document.getElementsByClassName('score-names')[0];
+    var stotal = document.getElementsByClassName('score-total')[0];
+    var sbehind = document.getElementsByClassName('score-behind')[0];
+    var sasafs = document.getElementsByClassName('score-asafs')[0];
+    var syanivs = document.getElementsByClassName('score-yanivs')[0];
+    var cell = null;
+    for (let player = 1; player <= numPlayers; player++) {
+        cell = snames.insertCell();
+        cell.setAttribute("class", "player" + player);
+        cell.setAttribute("contenteditable", "true");
+        cell.textContent = "Player " + player;
+        
+        cell = stotal.insertCell();
+        cell.setAttribute("class", "player" + player);
+        cell.textContent = 0;
+        
+        cell = sbehind.insertCell();
+        cell.setAttribute("class", "player" + player);
+        cell.textContent = 0;
+
+        cell = sasafs.insertCell();
+        cell.setAttribute("class", "player" + player);
+        cell.textContent = 0;
+
+        cell = syanivs.insertCell();
+        cell.setAttribute("class", "player" + player);
+        cell.textContent = 0;
+    }
+}
 
 function update(e) {
     sumScores();
@@ -24,7 +66,13 @@ function addRow() {
         c.setAttribute("contenteditable", "true");
         c.setAttribute("class", "player" + index);
         c.addEventListener("blur", update);
+        if (scores[index] >= gameScore) {
+            c.textContent = OUT;
+            c.style.backgroundColor = 'rgb(255, 0, 0, .7)';
+            c.setAttribute("contenteditable", "false");
+        }
     }
+    document.getElementById("add-row").scrollIntoView();
 };
 
 function scorecardScores() {

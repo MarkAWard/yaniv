@@ -55,13 +55,25 @@
 body {
     /* background: -webkit-linear-gradient(left, #25c481, #25b7c4);
     background: linear-gradient(to right, #25c481, #25b7c4); */
-    background-color: #25c481;
+    /* background-color: #25c481; */
+    background-color: #325694;
     font-family: 'Roboto', sans-serif;
 }
 
 section {
     border: none;
-    margin: 20px;
+    margin: 2%;
+}
+
+#titles {
+    top: 0;
+    height: 76px;
+}
+.bottom {
+    bottom: 0;
+    height: 16px;
+    line-height: 16px;
+    font-size: 12px;
 }
 
 /* Yaniv Title */
@@ -71,18 +83,35 @@ h1 {
     text-transform: uppercase;
     font-weight: 300;
     text-align: center;
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
 }
 
-/* background header and first column except for last Add Scores cell*/
-thead, tbody tr:not(:last-child) td:first-child {
-    background-color: #66d7a8;
+h2 {
+    font-size: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 250;
+    text-align: center;
+    /* margin-bottom: 10px; */
+}
+
+.freeze-tbl {
+    width: 90%;
+    height: calc(90vh - 100px);
+    overflow: auto;
+    margin: auto;
 }
 
 table {
     border-collapse: separate;
     border-spacing: 0;
+    margin: auto;
   }
+
+/* background header and first column except for last Add Scores cell*/
+thead, tbody tr:not(:last-child) td:first-child {
+    background-color: #B0A8A7;
+}
 
 /* fix width and position of first column */
 th:first-child, td:first-child {
@@ -152,13 +181,6 @@ tbody tr:last-child td {
     border: none;
 }
 
-.freeze-tbl {
-    width: 400px;
-    height: 400px;
-    overflow: auto;
-    margin: auto;
-}
-
 thead, thead tr, th {
     top: 0;
     position: sticky;
@@ -183,7 +205,7 @@ tr.score-yanivs, tr.score-yanivs th {
 }
 
 th:first-child {
-    background-color: #25b7c4;
+    background-color: #129BBA;
     z-index: 50;
 }
 

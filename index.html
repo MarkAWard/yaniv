@@ -9,69 +9,78 @@
     <script src='main.js' defer></script>
 </head>
 <body>
-    <h1>Yaniv</h1>
-    <section>
+    <div id="titles">
+        <h1>Yaniv</h1>
+        <h2 id="game-score"></h2>    
+    </div>
 
-        <!-- <table>
-            <thead>
-                <tr>
-                    <th>Game To</th>
-                    <th><input type="number" id="gameto"></th>
-                    <th>Num Players</th>
-                    <th><input type="number" id="gameto"></th>
-                </tr>
-            </thead>
-        </table> -->
+    <section id="game-setup">
+        <div>
+            <div class="field">
+                <label for="game-to">Game to:</label>
+                <input type="number" id="game-to" name="game-to" placeholder="200" />
+                <small></small>
+            </div>
+            <div class="field">
+                <label for="num-players">Number of players:</label>
+                <input type="numer" id="num-players" name="num-players" placeholder="4" />
+                <small></small>
+            </div>
+            <button type="submit" onclick="setupGame()">Start Game</button>
+        </div>
+    </section>
 
+    <section id="scorecard" style="display:none">
         <div class="freeze-tbl">
             <table>
             <thead>
               <tr class="score-names">
                 <th>Player</th>
-                <th class="player1">Mark</th>
+                <!-- <th class="player1">Mark</th>
                 <th class="player2">Kristine</th>
                 <th class="player3">Brian</th>
-                <th class="player4">Chris</th>
+                <th class="player4">Chris</th> -->
               </tr>
               <tr class="score-total">
                 <th>Score</th>
-                <th class="player1">0</th>
+                <!-- <th class="player1">0</th>
                 <th class="player2">0</th>
                 <th class="player3">0</th>
-                <th class="player4">0</th>
+                <th class="player4">0</th> -->
               </tr>
               <tr class="small-header score-behind">
                 <th>Points Behind</th>
-                <th class="player1">0</th>
+                <!-- <th class="player1">0</th>
                 <th class="player2">0</th>
                 <th class="player3">0</th>
-                <th class="player4">0</th>
+                <th class="player4">0</th> -->
               </tr>
               <tr class="small-header score-asafs">
                 <th>Asafs</th>
-                <th class="player1">0</th>
+                <!-- <th class="player1">0</th>
                 <th class="player2">0</th>
                 <th class="player3">0</th>
-                <th class="player4">0</th>
+                <th class="player4">0</th> -->
               </tr>
               <tr class="small-header score-yanivs">
                 <th>Yanivs</th>
-                <th class="player1">0</th>
+                <!-- <th class="player1">0</th>
                 <th class="player2">0</th>
                 <th class="player3">0</th>
-                <th class="player4">0</th>
+                <th class="player4">0</th> -->
               </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>
-                      <button onclick="addRow()">Add Scores</button>
+                      <button id="add-row" onclick="addRow()">Add Scores</button>
                     </td>
                   </tr>  
             </tbody>
-            <tfoot>
-            </tfoot>  
             </table>
+        </div>
+        <div class="bottom">
+            <p>Made for fun</p>
         </div>
     </section>
     </body>
