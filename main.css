@@ -137,6 +137,7 @@ th {
     line-height: 60px;
     min-width: 60px;
     height: 60px;
+    white-space: nowrap;
     /* padding: 20px 15px;
     text-align: left;
     font-size: 20px;
