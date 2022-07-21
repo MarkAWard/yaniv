@@ -17,6 +17,23 @@ function setupGame(e) {
     document.getElementsByClassName("score-names")[0].children[1].focus();
 }
 
+function enterToNext(elem) {
+    return (event) => {
+        function focusNext() {
+            editable = document.querySelectorAll("[contenteditable='true']");
+            var element = document.getElementById("add-row");
+            for (let index = 0; index < editable.length - 1; index++) {
+                if (elem == editable[index]) {
+                    element = editable[index + 1];
+                    break;
+                }
+            }
+            element.focus();
+        }
+        if (event.key == 'Enter') { focusNext(); event.preventDefault();}
+    }
+}
+
 function createPlayerHeader() {
     var snames = document.getElementsByClassName('score-names')[0];
     var stotal = document.getElementsByClassName('score-total')[0];
@@ -31,6 +48,7 @@ function createPlayerHeader() {
         cell.textContent = "Player " + player;
         cell.onclick = () => { document.execCommand('selectAll',false,null) };
         cell.onfocus = () => { document.execCommand('selectAll',false,null) };
+        cell.onkeydown = enterToNext(cell);
         snames.appendChild(cell);
         
         cell = document.createElement("th");
@@ -77,6 +95,7 @@ function addRow() {
         c.setAttribute("inputmode", "numeric");
         c.onclick = () => { document.execCommand('selectAll',false,null) };
         c.onfocus = () => { document.execCommand('selectAll',false,null) };
+        c.onkeydown = enterToNext(c);
         if (scores[index] >= gameScore) {
             c.textContent = OUT;
             c.style.backgroundColor = 'rgb(255, 0, 0, .7)';
