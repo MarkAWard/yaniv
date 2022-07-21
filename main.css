@@ -18,12 +18,6 @@ section {
     top: 0;
     height: 76px;
 }
-.bottom {
-    bottom: 0;
-    height: 16px;
-    line-height: 16px;
-    font-size: 12px;
-}
 
 /* Yaniv Title */
 h1 {
@@ -42,10 +36,19 @@ h2 {
     text-align: center;
 }
 
-#game-setup {
+/* New game form and button divs */
+.setup-form, .bottom {
     color: #fff;
     font-size: 20px;
+    text-align: center;
 }
+
+.bottom {
+    bottom: 0;
+    height: 16px;
+    line-height: 16px;
+}
+
 input {
     width: 40px;
 }
