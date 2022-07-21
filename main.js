@@ -14,6 +14,7 @@ function setupGame(e) {
     createPlayerHeader();
     document.getElementById("scorecard").style.display = null;
     document.getElementById("game-setup").style.display = 'none';
+    document.getElementsByClassName("score-names")[0].children[1].focus();
 }
 
 function createPlayerHeader() {
