@@ -107,6 +107,7 @@ function addRow() {
         var scoreBox = newRow.childNodes[index];
         if (scoreBox.getAttribute('contenteditable') == 'true') {
             scoreBox.focus();
+            scoreBox.scrollIntoView();
             break;
         }
     }

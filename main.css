@@ -128,8 +128,8 @@ tr.score-names th:not(:first-child), tr.score-total th:not(:first-child) {
 
 /* Round scores table body */
 td {
-    padding: 10px;
-    text-align: left;
+    padding: 5px;
+    text-align: center;
     vertical-align:middle;
     font-weight: 300;
     font-size: 15px;
