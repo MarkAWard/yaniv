@@ -65,7 +65,6 @@ function update(e) {
 
 
 function addRow() {
-    console.log("CLICK add scores");
     var scoresRef = document.getElementsByTagName("tbody")[0];
     var N = scoresRef.getElementsByTagName("tr").length;
     var newRow = scoresRef.insertRow(N-1);
@@ -88,8 +87,6 @@ function addRow() {
     for (let index = 1; index < newRow.childNodes.length; index++) {
         var scoreBox = newRow.childNodes[index];
         if (scoreBox.getAttribute('contenteditable') == 'true') {
-            console.log("focus on " + index);
-            console.log(scoreBox);
             scoreBox.focus();
             break;
         }
