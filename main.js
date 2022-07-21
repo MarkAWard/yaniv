@@ -29,6 +29,8 @@ function createPlayerHeader() {
         cell.setAttribute("class", "player" + player);
         cell.setAttribute("contenteditable", "true");
         cell.textContent = "Player " + player;
+        cell.onclick = () => { document.execCommand('selectAll',false,null) };
+        cell.onfocus = () => { document.execCommand('selectAll',false,null) };
         snames.appendChild(cell);
         
         cell = document.createElement("th");
@@ -61,6 +63,7 @@ function update(e) {
     updateAsafs();
 };
 
+
 function addRow() {
     console.log("CLICK add scores");
     var scoresRef = document.getElementsByTagName("tbody")[0];
@@ -72,6 +75,9 @@ function addRow() {
         c.setAttribute("contenteditable", "true");
         c.setAttribute("class", "player" + index);
         c.addEventListener("blur", update);
+        c.setAttribute("inputmode", "numeric");
+        c.onclick = () => { document.execCommand('selectAll',false,null) };
+        c.onfocus = () => { document.execCommand('selectAll',false,null) };
         if (scores[index] >= gameScore) {
             c.textContent = OUT;
             c.style.backgroundColor = 'rgb(255, 0, 0, .7)';
@@ -119,7 +125,7 @@ function sumScores() {
             var val = row[player-1]
             if (pscores[idx] == OUT || isNaN(val)) { continue; }
             if (val == 0) { pyanivs++; }
-            if (val >= 30 && !row.includes(0)) { pasafs++; }
+            if (val >= 30 && val <= 37 && !row.includes(0)) { pasafs++; }
             ptotal += val;
             if (ptotal > 50 && ptotal % 50 == 0) { ptotal -= 50; }
         }

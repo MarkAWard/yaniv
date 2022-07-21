@@ -214,7 +214,7 @@ td:first-child {
 }
 
 .button-4:hover {
-  background-color: #F3F4F6;
+  background-color: #a7bfe3;
   text-decoration: none;
   transition-duration: 0.1s;
 }
@@ -233,7 +233,7 @@ td:first-child {
 }
 
 .button-4:focus {
-  outline: 1px transparent;
+    background-color: #becde3;
 }
 
 .button-4:before {
