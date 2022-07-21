@@ -86,7 +86,8 @@ function addRow() {
     var scoresRef = document.getElementsByTagName("tbody")[0];
     var N = scoresRef.getElementsByTagName("tr").length;
     var newRow = scoresRef.insertRow(N-1);
-    newRow.insertCell().textContent = "Round " + N;
+    var roundCell = newRow.insertCell()
+    roundCell.textContent = "Round " + N;
     for (let index = 1; index <= numPlayers; index++) {
         var c = newRow.insertCell();
         c.setAttribute("contenteditable", "true");
@@ -94,7 +95,16 @@ function addRow() {
         c.addEventListener("blur", update);
         c.setAttribute("inputmode", "numeric");
         c.onclick = () => { document.execCommand('selectAll',false,null) };
-        c.onfocus = () => { document.execCommand('selectAll',false,null) };
+        c.onfocus = (e) => {
+            var div = document.getElementById("scrollable");
+            if (e.target.offsetLeft - roundCell.offsetWidth < div.scrollLeft) {
+                div.scrollTo({
+                    left: e.target.offsetLeft - roundCell.offsetWidth,
+                    top: div.scrollTop,
+                });
+            }
+            document.execCommand('selectAll',false,null);
+        };
         c.onkeydown = enterToNext(c);
         if (scores[index] >= gameScore) {
             c.textContent = OUT;
@@ -111,6 +121,8 @@ function addRow() {
             break;
         }
     }
+    var div = document.getElementById("scrollable");
+    div.scrollTo({top: div.clientHeight, left: 0});
 };
 
 function scorecardScores() {
