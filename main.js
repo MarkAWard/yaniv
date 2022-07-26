@@ -156,7 +156,7 @@ function sumScores() {
             if (val == 0) { pyanivs++; }
             if (val >= 30 && val <= 37 && !row.includes(0)) { pasafs++; }
             ptotal += val;
-            if (ptotal > 50 && ptotal % 50 == 0) { ptotal -= 50; }
+            if (ptotal > 50 && ptotal % 50 == 0 && val > 0) { ptotal -= 50; }
         }
         scores[player] = ptotal;
         yanivs[player] = pyanivs;
